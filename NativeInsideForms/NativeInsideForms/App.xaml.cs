@@ -13,6 +13,11 @@ namespace NativeInsideForms
             MainPage = new MainPage();
         }
 
+        public static void OpenPage()
+        {
+            //INativeNavigationService service = DependencyService.Get<INativeNavigationService>();
+            //Device.BeginInvokeOnMainThread(() => service.Navigate());
+        }
         protected override void OnStart()
         {
             // Handle when your app starts

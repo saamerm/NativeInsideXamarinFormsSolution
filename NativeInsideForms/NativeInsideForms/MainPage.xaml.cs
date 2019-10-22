@@ -39,6 +39,7 @@ namespace NativeInsideForms
 
         private void Button_Pressed(object sender, EventArgs e)
         {
+            App.OpenPage();
             // Open a page
         }
     }
