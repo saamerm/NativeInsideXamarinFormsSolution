@@ -15,7 +15,31 @@ namespace NativeInsideForms
     {
         public MainPage()
         {
-            InitializeComponent();
+            var label = new Label();
+#if __IOS__
+            label.Text = "iOS";
+#elif __DROID__
+            label.Text = "Droid";
+#endif
+            var button = new Button()
+            {
+                Text = "Open Page"
+            };
+            button.Pressed += Button_Pressed;
+            var stackLayout = new StackLayout()
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+            stackLayout.Children.Add(label);
+            stackLayout.Children.Add(button);
+            Content = stackLayout;
+
+        }
+
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            // Open a page
         }
     }
 }
